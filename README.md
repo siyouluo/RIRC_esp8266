@@ -1,9 +1,65 @@
-#远程红外遥控器 （c）2018 罗嗣友，GPLv3许可证， 详情见https://www.gnu.org/licenses/gpl-3.0.en.html  
-# RIRC_esp8266
-这是用esp8266实现的一个远程红外遥控器  
-我使用乐鑫的esp8266模块制作了一个远程红外遥控器，因为可以免费接入机智云平台，所以我可以在广域网范围内进行控制  
-项目需求在于酷夏或者严冬，我们可能希望一回到房间就有舒适的温度，这需要我们在回到房间之前就打开空调。  
-机智云平台的SoC方案可以自动生成代码，开发者只需要添加一些事件处理即可
-esp8266内置了MCU，理论上可以只用一个esp8266加电阻、三极管、红外二极管完成这个项目，但它的板载MCU太差劲，生成的红外波形完全无法被正确接收，因此我另接了一个STC89C52，两者之间通过UART协议进行通信
-你可能觉得我这个readme.md写得乱七八糟、毫无头绪，没错，我现在完全没心思管理这个项目，因为我这些天被这个玩意儿坑惨了。一句话：esp8266坑太多，水太深，慎入！  
-以后等我什么时候心情好了再来整理一下资料，写个详细的教程，这些东西先堆在这儿吧，我走了……
+# RIRC 红外遥控器
+
+# 产品说明
+本产品是一个空调遥控器，可以通过移动端APP进行远程控制。其硬件底层是通过模拟原装空调遥控器的红外波形，从而实现对特定型号空调的控制(暂仅支持格力空调YB0F2型号遥控器)。  
+使用时需要将本产品连接到WiFi网络，手机需要安装对应APP并连网(数据网络或者WiFi)，手机**无需**和本产品处于同一局域网环境。  
+
+<div align=center><img src="./Images/产品实物图1.jpg" height="180" />  <img src="./Images/产品实物图2.jpg" height="180" /></div>
+
+本产品的主要使用场景有： 
+
+1. 手机本身不包含红外发射装置，但又希望能直接通过手机控制空调;
+2. 希望在户外提前打开空调，待用户到达房间时，温度已经调节合适;
+3. 使用传感器获取当前时间、房间温度、光照强度等参数，并通过软件实现自动控制(暂未实现).
+
+# 开发环境/辅助软件
+Windows10 + VirtualBox虚拟机(lubuntu)
+
+Multisim12.0 + Fritzing0.9.0b
+
+# 器件清单
+|元件|功能|图片|补充说明|参考价格|
+|:---|:---|:---:|:---|:---|
+|ESP8266-12F|WiFi模块|<div align=center><img src="./Images/esp8266.jpg" width=50></div>|俗称“小黑板”|&yen;30.96|   
+|NE555|定时器|<div align=center><img src="./Images/ne555.jpg" width=50></div>|DIP-8封装|&yen;3.6/10个|
+|整流二极管|振荡器辅助元件|<div align=center><img src="./Images/整流二极管.jpg" width=50></div>|便于调节占空比|&yen;5.5/100只|
+|电阻、电容|振荡器辅助元件|<div align=center><img src="./Images/电阻电容.jpg" width=50></div>|0805贴片封装|&yen;3.7/100个|  
+|多圈可调精密电位计|调节载波频率和占空比|<div align=center><img src="./Images/电位计.jpg" width=50></div>|3296W封装|&yen;2.31/5个|  
+|NPN三极管|基本共射放大|<div align=center><img src="./Images/晶体管.jpg" width=50></div>|9013|&yen;2.36/50个|  
+|红外发光二极管|发射红外光信号|<div align=center><img src="./Images/红外发光二极管.jpg" width=50></div>|5mm|&yen;2.08/10个|
+|数据线|供电|<div align=center><img src="./Images/数据线.jpg" width=50></div>|Micro-USB接口|&yen;10|
+|洞洞板|电路载体|\*|7\*9cm|&yen;8.5/5片|  
+|逻辑分析仪/示波器|辅助工具|\*|\*|\*|
+|一体化红外接收头|辅助工具|\*|\*|\*|  
+
+# 开发教程
+如果你打算复现我的项目，可以参考以下文档：  
+[格力空调红外协议](./Infrared_Protocol/readme.md)  
+[红外信号载波](./Carrier_Wave/readme.md)  
+[ESP8266开发教程](./ESP8266_Proj/readme.md)  
+
+
+# 文件树结构
+.  
+├── README.md  
+├── Carrier_Wave  
+|   ├── readme.md  
+|   └── images/  
+├── Datasheet   
+|   └── ne555.pdf  
+├── ESP8266_Proj  
+|   ├── readme.md  
+|   ├── code_update.md  
+|   ├── code_package/  
+|   └── images/  
+├── Fritzing_Proj  
+|   ├── demo.fzz  
+|   └── images/  
+├── Images/    
+├── Infrared_Protocol/  
+├── Reference/  
+└── Tools/  
+
+# 补充说明
+本产品开发过程中参考了网络上其他开发者的教程，特此致谢！  
+部分图片资料等来源于网络，如有侵权，请联系本人删除！
