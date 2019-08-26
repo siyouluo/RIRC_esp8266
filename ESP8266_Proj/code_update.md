@@ -256,7 +256,15 @@ LOCAL void ICACHE_FLASH_ATTR keyInit(void)
 
 # 模拟NEC协议
 ESP8266的管脚上只需要产生基带信号，然后接到555定时器的RST管脚进行调制，555定时器输出已调信号，因为RST无效时，555定时器输出恒定低电平，所以当三极管基极为低电平时需要截止，所以三极管选用NPN管，基本共射放大接法。
-## 添加源文件
-## 添加头文件
-## 修改主函数
-## 填充业务逻辑
+
+接下来我直接列出需要修改或添加的文件，你可以直接使用我的代码文件：  
+
+将以下文件添加到指定路径：  
+app/include/driver/hal_led.h  
+app/driver/hal_led.c  
+app/include/driver/hal_ir.h  
+app/driver/hal_ir.c  
+
+将以下文件用我的对应文件进行替换  
+app/user/user_main.c  
+app/Gizwits/gizwits_product.c  

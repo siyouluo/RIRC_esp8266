@@ -28,6 +28,242 @@
 0:  600us低电平 + 600us高电平  
 1:  600us低电平 + 1600us高电平  
 
+前35bit数据码：  
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="0" width="100%">
+<tr style="background:#C0C0C0;" align="center">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+</tr>
+
+<tr style="background:#C0CFC0;" align="center">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr style="background:#FFFFFF;" align="center">
+<td width="18.75%" colspan="3">模式标志</td>
+<td width="6.25%">开关</td>
+<td width="12.5%" colspan="2">风速</td>
+<td width="7.25%">扫风</td>
+<td width="6.25%">睡眠</td>
+<td width="23%" colspan="4">温度数据</td>
+<td width="25%" colspan="4">定时数据</td>
+</tr>
+
+<tr style="background:#C0C0C0;" align="center">
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td>31</td>
+<td>32</td>
+</tr>
+
+<tr style="background:#C0CFC0;" align="center">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+
+<tr style="background:#FFFFFF;" align="center">
+<td colspan="4">定时数据</td>
+<td>加湿</td>
+<td>灯光</td>
+<td>负离子</td>
+<td>节电</td>
+<td>换气</td>
+<td colspan="7">所有按键均显示此值</td>
+</tr>
+
+<tr style="background:#C0C0C0;">
+<td>33</td>
+<td>34</td>
+<td>35</td>
+<td width="76%" colspan="13"> </td>
+</tr>
+
+<tr style="background:#C0CFC0;">
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td width="76%" colspan="13"></td>
+</tr>
+
+<tr style="background:#FFFFFF;">
+<td width="23%" colspan="3">所有按键均显示此值</td>
+<td width="76%" colspan="13"></td>
+</tr>
+
+</table>
+</div>
+
+后32bit数据码：  
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="0" width="100%">
+<tr style="background:#C0C0C0;" align="center">
+<td>36</td>
+<td>37</td>
+<td>38</td>
+<td>39</td>
+<td>40</td>
+<td>41</td>
+<td>42</td>
+<td>43</td>
+<td>44</td>
+<td>45</td>
+<td>46</td>
+<td>47</td>
+<td>48</td>
+<td>49</td>
+<td>50</td>
+<td>51</td>
+</tr>
+
+<tr style="background:#C0CFC0;" align="center">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr style="background:#FFFFFF;" align="center">
+<td>上下扫风</td>
+<td colspan="3"></td>
+<td>左右扫风</td>
+<td colspan="3"></td>
+<td colspan="2">温度显示</td>
+<td colspan="6">所有按键均显示此值</td>
+</tr>
+
+<tr style="background:#C0C0C0;" align="center">
+<td>52</td>
+<td>53</td>
+<td>54</td>
+<td>55</td>
+<td>56</td>
+<td>57</td>
+<td>58</td>
+<td>59</td>
+<td>60</td>
+<td>61</td>
+<td>62</td>
+<td>63</td>
+<td>64</td>
+<td>65</td>
+<td>66</td>
+<td>67</td>
+</tr>
+
+<tr style="background:#C0CFC0;" align="center">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr style="background:#FFFFFF;" align="center">
+<td colspan="10">所有按键均显示此值</td>
+<td>节能</td>
+<td></td>
+<td colspan="4">校验码</td>
+</tr>
+
+</table>
+</div>
+
+上表中，大于两位的数据都采取“小端法”，低位在低地址（左），各数据的意义如下：  
+
+|模式标志|自动|制冷|加湿|送风|制热|
+|---|---|---|---|---|---|
+|数据码|000|100|010|110|001|
+
+|风速标志|自动|一级|二级|三级|
+|---|---|---|---|---|
+|数据码|00|10|01|11|
+
+|温度|16度|17度|18~29度|30度|
+|---|---|---|:---:|---|
+|数据码|0000|1000|~|0111|
+
+
 后32bit数据码中最后4bit为校验码，似乎不同型号的遥控器校验码不同，经过测试，我所使用的遥控器校验规则如下：  
 ```c
 //校验码

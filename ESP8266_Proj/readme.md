@@ -25,9 +25,12 @@
 
 ## MCU开发(SOC方案)  
 <div align=center><img src="./images/MCU开发(SOC方案).png" width="300" /></div>    
-Product secret可以在产品信息中查看，点击生成代码包，并下载
-*修改数据点之后需要修改，并重新生成代码包*  
-我的代码已下载到[code_package](./code_package/)文件夹下
+Product secret可以在产品信息中查看，点击生成代码包，并下载  
+
+*修改数据点之后需要点击“修改”，重新生成代码包并下载*  
+
+我的代码已下载到 
+[code_package](./code_package)文件夹下
 
 ## 固件开发
 参考论坛帖子[GoKit3(S) 二次开发--开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html)配置编译环境(virtural box + lubuntu)  
