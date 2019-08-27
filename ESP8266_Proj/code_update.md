@@ -1,6 +1,6 @@
 # 代码修改
 本文档主要解释自动生成的代码包需要如何修改  
-直接从机智云开发者中心下载的自动生成代码包位于[./code_package/GizwitsSoCESP8266_32M20190814124049489208a7c6.zip](./code_package/)  
+直接从机智云开发者中心下载的自动生成代码包位于[./code_package/GizwitsSoCESP8266_32M20190826081308985208a7c6.zip](./code_package/)  
 经过修改之后的代码位于[./code_package/SoC_ESP8266_32M_source.zip](./code_package/)  
 
 
@@ -191,6 +191,7 @@ LOCAL void ICACHE_FLASH_ATTR keyInit(void)
 ```
 
 ## 填充业务逻辑
+根据数据点数据类型的不同，这部分代码可能不同，但不影响需要添加的部分。  
 ```diff
 --- app/Gizwits/gizwits_product.c
 +++ app/Gizwits/gizwits_product.c
@@ -259,12 +260,13 @@ ESP8266的管脚上只需要产生基带信号，然后接到555定时器的RST�
 
 接下来我直接列出需要修改或添加的文件，你可以直接使用我的代码文件：  
 
-将以下文件添加到指定路径：  
+## 添加文件  
 app/include/driver/hal_led.h  
 app/driver/hal_led.c  
 app/include/driver/hal_ir.h  
 app/driver/hal_ir.c  
 
+## 替换文件
 将以下文件用我的对应文件进行替换  
 app/user/user_main.c  
 app/Gizwits/gizwits_product.c  

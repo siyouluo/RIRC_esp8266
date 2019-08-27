@@ -16,6 +16,10 @@
 [如何定义数据点-官方教程](http://docs.gizwits.com/zh-cn/quickstart/datapoint_tutorial.html)  
 <div align=center><img src="./images/定义数据点.png" width="300" /></div>
 
+*我一共添加了3个数据点，开关-布尔值，模式-枚举，温度-数值。这是最新版的数据点及其数据类型，本文档其他部分可能显示其他数据类型，请以上图为准。*  
+*关于枚举：如果某个数据点是枚举类型，且当前值为枚举值1，这时在APP上点击枚举值1，将不会触发事件服务程序，只有点击与当前值不同的值时才会有响应。*
+
+
 ## 虚拟设备
 > 通过虚拟设备模拟真实设备上报数据的行为，可以快速验证接口功能的开发。
 > 用您开发的app或 下载Demo App 绑定虚拟设备，即可对虚拟设备进行远程控制及查看通讯日志。
@@ -64,8 +68,11 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 ## 固件升级(OTA)
 
-[参考链接](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7-OTA)
+第一次下载固件时，需要将ESP8266连接到USB转TTL模块上，再连接到电脑下载4个文件（参考[固件下载](#固件下载)），当设备已经部署完成后，可能无法将ESP8266取下，不方便通过有线方式刷写固件，或者开发者不在设备部署现场，无法亲自操作。  
+这时候就可以使用OTA方式升级固件，你可以按照[OTA固件升级-官方教程](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7-OTA)进行操作，OTA升级固件时只需要下载bin/upgrade/*.bin一个文件即可。  
+*有时可能固件下载完成后，报错：固件验证失败。可能其实是验证成功，ESP8266设备重启即可工作。*  
 
+<div align=center><img src="./images/固件升级.png" width="400" /><img src="./images/OTA.png" width="400" /></div>
 
 # 友情链接
 [机智云-官网](http://www.gizwits.com/)  

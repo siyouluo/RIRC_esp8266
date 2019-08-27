@@ -39,26 +39,6 @@ Multisim12.0 + Fritzing0.9.0b
 [ESP8266开发教程](./ESP8266_Proj/readme.md)  
 
 
-# 文件树结构
-.  
-├── README.md  
-├── Carrier_Wave  
-|   ├── readme.md  
-|   └── images/  
-├── Datasheet   
-|   └── ne555.pdf  
-├── ESP8266_Proj  
-|   ├── readme.md  
-|   ├── code_update.md  
-|   ├── code_package/  
-|   └── images/  
-├── Fritzing_Proj  
-|   ├── demo.fzz  
-|   └── images/  
-├── Images/    
-├── Infrared_Protocol/  
-├── Reference/  
-└── Tools/  
 
 # 后续改进
 1. 555定时器的方波不太稳有一个很高的尖峰脉冲，可以在3口加一个104的电解电容，或者用7555替代 [百度知道](https://zhidao.baidu.com/question/617617286604112012.html)
